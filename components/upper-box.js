@@ -588,7 +588,7 @@ Vue.component('upper-box', {
             searchResultsContainer.appendChild(horizontalRule);
 
 
-                        // since we originally set the innerHTML of the container to '', we need to readd the list
+            // since we originally set the innerHTML of the container to '', we need to readd the list
             const searchResults = document.createElement('ul');
             searchResults.style.paddingLeft = '0';
             searchResults.style.listStyleType = 'none';
