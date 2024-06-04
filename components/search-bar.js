@@ -27,7 +27,6 @@ Vue.component('search-bar', {
     methods: {
         searchFocus() {
             const input = document.getElementById("search-input");
-            const searchButton = document.getElementsByClassName('search-button')[0];
             const upperDiv = document.getElementsByClassName("upper-box")[0];
             const searchDiv = document.getElementsByClassName('search-box')[0];
             const searchImg = document.getElementById("search-img");
@@ -67,21 +66,6 @@ Vue.component('search-bar', {
 
         handleSearch(){
             var query = this.query;
-            const searchResultsContainer = document.getElementsByClassName('search-results-cont')[0];
-
-            // conditionally execute this
-            // if (document.getElementById('results-str') == null || document.getElementById('hr-results') == null){
-            //     // Adding the Results string and a horizontal line
-            //         const resultsString = document.createElement('p');
-            //         resultsString.textContent = 'Results';
-            //         resultsString.id = 'results-str'
-            //         searchResultsContainer.appendChild(resultsString);
-    
-            //         const horizontalRule = document.createElement('hr');
-            //         horizontalRule.id = 'hr-results';
-            //         searchResultsContainer.appendChild(horizontalRule);
-            //     }
-            // searchResultsContainer.innerHTML = ''; // Clear previous search results
             const searchResult = document.getElementById("search-results");
             searchResult.innerHTML = ''; // Clear previous search results
             console.log(query);
@@ -113,12 +97,6 @@ Vue.component('search-bar', {
             filteredData.forEach((element) => {
                 this.results.push({item: element, match: query, type: element.type})
             })
-          
-            // since we originally set the innerHTML of the container to '', we need to readd the list
-            // const searchResults = document.createElement('ul');
-            // searchResults.style.paddingLeft = '0';
-            // searchResults.style.listStyleType = 'none';
-            var counter = 0; // counter to only display limited results in the event that there are too many
             
             console.log(this.results);
 
