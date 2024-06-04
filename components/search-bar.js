@@ -68,7 +68,6 @@ Vue.component('search-bar', {
             var query = this.query;
             const searchResult = document.getElementById("search-results");
             searchResult.innerHTML = ''; // Clear previous search results
-            console.log(query);
             if (query.trim() === '') {
                 // If search query is empty, do not display anything
                 return;
@@ -98,12 +97,10 @@ Vue.component('search-bar', {
                 this.results.push({item: element, match: query, type: element.type})
             })
             
-            console.log(this.results);
 
         },
 
         showHr(){
-            console.log('called');
             return this.results != [];
         }
 

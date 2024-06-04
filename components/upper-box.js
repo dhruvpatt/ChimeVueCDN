@@ -496,13 +496,11 @@ Vue.component('upper-box', {
     computed: {
         getIcon128(){
             const path = "assets/" + this.searchItem.type + "128.png";
-            console.log(path);
             return path;
         },
 
         getIcon(){
             const path = "assets/" + this.searchItem.type + ".png";
-            console.log(path);
             return path;
         }
         
@@ -548,7 +546,6 @@ Vue.component('upper-box', {
     methods: {
         handleSearch: function(query){
             query = query.toLowerCase();
-            console.log('Handling search for:', query);
             const searchResultsContainer = document.getElementsByClassName('search-results-cont')[0];
             searchResultsContainer.innerHTML = ''; // Clear previous search results
             if (query.trim() === '') {
